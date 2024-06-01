@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obtener Nombre</title>
+</head>
+<body>
+    <!-- Cuando termino de jugar con fechas tengo que descomentar  -->
+    <script>
+        // Pedir al usuario que ingrese su nombre
+        const nombre = prompt("Por favor, ingresa tu nombre:");
+
+        if (nombre === null) {
+            // Si el usuario cancela la entrada, mostrar un mensaje de error
+            alert("Bienvenido anonimo!.");
+        } else if (nombre === "") {
+            // Si el usuario no ingresa nada, mostrar un mensaje de error
+            alert("Bienvenido, no ingresaste tu nombre.");
+        } else {
+            // Si el usuario ingresa su nombre, mostrar un saludo personalizado
+            alert(`¡Hola, ${nombre}! Bienvenido.`);
+        }
+    </script>
+    <script src="./intro/clase_08.js"></script>
+    <label for="fechas">Seleccione la fecha</label>
+    <input type="date" id="fechas">
+    <button type="button" id="button">aceptar</button>
+
+    <script src="./intro/trabajandoFechas.js"></script>
+</body>
+</html>

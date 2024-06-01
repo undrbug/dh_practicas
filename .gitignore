@@ -1,0 +1,4 @@
+# ignorar archivos pdf
+*.pdf
+# ignorar carpeta node_modules
+node_modules/

@@ -1,0 +1,38 @@
+[
+ {
+  "id": 1,
+  "titulo": "Estudiar",
+  "descripcion": "Estudiar para el examen de matemáticas",
+  "estado": "terminada"
+ },
+ {
+  "id": 2,
+  "titulo": "Hacer las compras",
+  "descripcion": "Comprar pan, leche y huevos",
+  "estado": "en progreso"
+ },
+ {
+  "id": 3,
+  "titulo": "Ir al gimnasio",
+  "descripcion": "Hacer 30 minutos de cardio y 30 de pesas",
+  "estado": "pendiente"
+ },
+ {
+  "id": 4,
+  "titulo": "Llamar a billie",
+  "descripcion": "Llamar a mamá para ver cómo está",
+  "estado": "pendiente"
+ },
+ {
+  "id": 5,
+  "titulo": "Hacer la comida",
+  "descripcion": "Hacer una ensalada y un filete de pollo",
+  "estado": "pendiente"
+ },
+ {
+  "id": 6,
+  "titulo": "hacer wireframes",
+  "descripcion": "comenzar con los wireframes para DH",
+  "estado": "pendiente"
+ }
+]
