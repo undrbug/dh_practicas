@@ -42,7 +42,7 @@ app.get(`/hopper`, (req, res) => {
 
 //error 404 - Not Found
 app.use((req, res) => {
-    res.status(404).send('<h1>404 not found. </h1> <br> <h2>¡Houston, we have a problem!</h2>');
+    res.sendFile(path.resolve('views/404.html'));
 })
 
 app.listen(PORT, (err) => {
