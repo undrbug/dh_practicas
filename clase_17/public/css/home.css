@@ -19,7 +19,7 @@ header {
 
 .img__logo {
   margin-top: 10px 5px;
-  width: 80%;
+  width: 60%;
 }
 
 img {
@@ -27,9 +27,32 @@ img {
 }
 
 .svg__icon {
-  width: 20px;
-  vertical-align: middle;
+  color: #1259c3 !important;
+  width: 2em;
+  /* vertical-align: middle; */
 }
+
+.btn_menu {
+  border-radius: 5px;
+  background-color: #03264C;
+}
+
+.cuerpo_texto {
+  size: 12px;
+}
+/* (Basado en tu última visita/Ofertas) */
+.titulares {
+  size: 24px;
+}
+.descripciones {
+  size: 16px;
+}
+.precios {
+  size: 18px;
+}
+.descuentos{
+  size: 16px;
+} 
 
 .form__searchbar {
   display: flex;
@@ -39,12 +62,14 @@ img {
 
 .searchbar__input {
   border-radius: 5px;
-  width: 80%;
-  height: 40px;
+  width: 25em;
+  height: 2.5em;
   padding: 5px;
 }
 
 .searchbar__button {
+  padding: 5px;
+  height: 2.5em;
   border-radius: 5px;
   color: black;
   opacity: 0.8;
