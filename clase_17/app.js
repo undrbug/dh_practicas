@@ -19,6 +19,7 @@ const PORT = process.env.PORT || 3000;
 //establecemos las rutas
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/home.html'));
+    // res.sendFile(path.resolve('./views/home.html'));
 })
 
 //iniciamos el servidor
