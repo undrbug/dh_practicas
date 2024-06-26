@@ -67,94 +67,53 @@
       </button>
     </div>
   </header>
+  
+<form action="/register" method="post">
+    <label for="name">Nombre:</label>
+    <input type="text" name="name" id="name" required minlength="3" maxlength="25">
+    <br>
+    <label for="lastname">Apellido:</label>
+    <input type="text" name="lastname" id="lastname" required minlength="2" maxlength="25">
+    <br>
+    <label for="username">Nombre de usuario:</label>
+    <input type="text" name="username" id="username" required minlength="6">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <br>
+    <label for="birthdate">Fecha de nacimiento:</label>
+    <input type="date" name="birthdate" id="birthdate" required>
+    <br>
+    <label for="address">Domicilio:</label>
+    <input type="text" name="address" id="address" required>
+    <br>
+    <label for="profile">Perfil del usuario:</label>
+    <select name="profile" id="profile" required>
+        <option value="comprador">Comprador</option>
+        <option value="vendedor">Vendedor</option>
+    </select>
+    <br>
+    <label for="interests">Categorías de interés:</label>
+    <input type="checkbox" name="interests[]" id="interests" value="electro">Electro
+    <input type="checkbox" name="interests[]" id="interests" value="moda">Moda
+    <input type="checkbox" name="interests[]" id="interests" value="hogar">Hogar
+    <input type="checkbox" name="interests[]" id="interests" value="jugueteria">Juguetería
+    <input type="checkbox" name="interests[]" id="interests" value="vida_sana">Vida sana
+    <br>
+    <label for="photo">Foto de usuario:</label>
+    <input type="file" name="photo" id="photo">
+    <br>
+    <label for="password">Contraseña:</label>
+    <input type="password" name="password" id="password" required minlength="6">
+    <br>
+    <label for="confirm_password">Confirmar contraseña:</label>
+    <input type="password" name="confirm_password" id="confirm_password" required minlength="6">
+    <br>
+    <button type="submit">Enviar</button>
+    <button type="reset">Borrar</button>
+    
+  </form>
 
-  <main>
-    <h1 class=" site center">¡Bienvenidos a MercadoLiebre!</h1>
-    <p class="site cuerpo_texto">El mejor lugar para encontrar las mejores ofertas</p>
-
-    <section class="articulos">
-      <h2 class="titulares">Basado en tu ultima visita</h2>
-
-      <article>
-        <img src="/images/img-cafetera-moulinex.jpg" alt="Cafetera Moulinex" />
-        <div class="descripcion">
-          <i class="truck fa-solid fa-truck"></i>
-          <h3 class="descripciones">Cafetera Moulinex</h3>
-          <p class="precios">$6.770</p>
-          <p class="descuentos">40% off</p>
-        </div>
-      </article>
-      <article>
-        <img src="/images/img-macbook-pro-2019.jpg" alt="Cafetera Moulinex" />
-        <div class="descripcion">
-          <i class="truck fa-solid fa-truck"></i>
-        <h3 class="descripciones">MacBook Pro 2019</h3>
-        <p class="precios">$230.000</p>
-        <p class="descuentos">20% off</p>
-        </div>
-      </article>
-      <article>
-        <img src="/images/img-samsung-galaxy-s10.jpg" alt="Cafetera Moulinex" />
-        <div class="descripcion">
-          <i class="truck fa-solid fa-truck"></i>
-        <h3 class="descripciones">Samsung Galaxy S10</h3>
-        <p class="precios">$70.500</p>
-        <p class="descuentos">10% off</p>
-        </div>
-      </article>
-
-      <article>
-        <img src="/images/img-tv-samsung-smart.jpg" alt="Cafetera Moulinex" />
-        <div class="descripcion">
-          <i class="truck fa-solid fa-truck"></i>
-        <h3 class="descripciones">SmartTv Samsung 43"</h3>
-        <p class="precios">$23.200</p>
-        <p class="descuentos">10% off</p>
-        </div>
-      </article>
-    </section>
-
-    <section>
-      <h3 class="titulares">Ofertas</h3>
-      <article>
-        <img src="/images/img-cafetera-moulinex.jpg" alt="Cafetera Moulinex" />
-        <div class="descripcion">
-          <i class="truck fa-solid fa-truck"></i>
-        <h3 class="descripciones">Cafetera Moulinex</h3>
-        <p class="precios">$6.770</p>
-        <p class="descuentos">40% off</p>
-        </div>
-      </article>
-
-      <article>
-        <img src="/images/img-macbook-pro-2019.jpg" alt="Cafetera Moulinex" />
-        <div class="descripcion">
-          <i class="truck fa-solid fa-truck"></i>
-        <h3 class="descripciones">MacBook Pro 2019</h3>
-        <p class="precios">$230.000</p>
-        <p class="descuentos">20% off</p>
-        </div>
-      </article>
-      <article>
-        <img src="/images/img-samsung-galaxy-s10.jpg" alt="Cafetera Moulinex" />
-        <div class="descripcion">
-          <i class="truck fa-solid fa-truck"></i>
-        <h3 class="descripciones">Samsung Galaxy S10</h3>
-        <p class="precios">$70.500</p>
-        <p class="descuentos">10% off</p>
-        </div>
-      </article>
-      <article>
-        <img src="/images/img-tv-samsung-smart.jpg" alt="Cafetera Moulinex" />
-        <div class="descripcion">
-          <i class="truck fa-solid fa-truck"></i>
-        <h3>SmartTv Samsung 43"</h3>
-        <p class="precios">$23.200</p>
-        <p class="descuentos">10% off</p>
-        </div>
-      </article>
-    </section>
-  </main>
   <hr />
   <footer>
     <i class="footer_i fa-solid fa-credit-card"></i>
@@ -178,5 +137,4 @@
     <h5 class="copyright">Copyright © 1999-2020 MercadoLiebre S.R.L.</h5>
   </footer>
 </body>
-
 </html>

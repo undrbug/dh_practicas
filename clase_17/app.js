@@ -22,6 +22,14 @@ app.get('/', (req, res) => {
     // res.sendFile(path.resolve('./views/home.html'));
 })
 
+app.get('/register', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/register.html'));
+})
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/login.html'));
+})
+
 //iniciamos el servidor
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
