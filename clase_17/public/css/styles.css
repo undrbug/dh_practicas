@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.background__yellow {
+  background-color: #eac926;
+}
+
 body {
   font-family: Roboto;
   background-color: #ebebeb;
@@ -16,9 +20,56 @@ header {
   flex-direction: column;
 }
 
+div.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img__logo {
+  max-width: 50%;
+  height: auto;
+}
+
+form.form__searchbar {
+  display: flex;
+}
+
+.searchbar__input {
+  width: 50%;
+  border-radius: 5px;
+  /* height: 2.5em; */
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.form__searchbar, .searchbar__button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  height: 2.5em;
+  border-radius: 5px;
+  color: black;
+  background: transparent;
+  opacity: 0.8;
+  /* right: 0;
+  top: 0;
+  bottom: 0; */
+}
+
+.searchbar__button i {
+  font-size: 16px;
+}
+
+.searchbar__button:hover {
+  opacity: 1;
+}
+
 .banner img {
   width: 100%;
-  color: white;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,16 +170,6 @@ li i {
   padding: 10px;
 }
 
-.img__logo {
-  margin: 10px;
-  /* margin-top: 10px 5px; */
-  width: 60%;
-}
-
-img {
-  width: 80%;
-}
-
 .btn_menu {
   margin: 20px 0;
   font-size: 1.5em;
@@ -166,30 +207,6 @@ h3.descripciones {
   margin: 15px 0;
 }
 
-.form__searchbar {
-  display: flex;
-  justify-content: center;
-}
-
-.searchbar__input {
-  border-radius: 5px;
-  width: 23em;
-  height: 2.5em;
-  padding: 5px;
-}
-
-.searchbar__button {
-  padding: 5px;
-  height: 2.5em;
-  border-radius: 5px;
-  color: black;
-  opacity: 0.8;
-}
-
-.searchbar__button:hover {
-  opacity: 1;
-}
-
 .compra_cuotas {
   margin: 20px;
 }
@@ -197,10 +214,6 @@ h3.descripciones {
 H5 {
   text-align: center;
   color: red;
-}
-
-.background__yellow {
-  background-color: #eac926;
 }
 
 footer {
@@ -230,48 +243,85 @@ button[type="submit"] {
   color: white;
   border: none;
   border-radius: 5px;
+  margin: 10px;
   padding: 10px;
   cursor: pointer;
-  transition-duration: 0.7s;
+  transition-duration: 0.3s;
 }
 
 button[type="submit"]:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: #0f2b55;
 }
 
-form {
-  /* display: flex; */
-  display: inline;
-  justify-content: center;
-  align-items: center;
-  /* border: 1px solid #1259c3; */
+button[type="reset"] {
+  background-color: #656769;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition-duration: 0.3s;
 }
 
-input {
+button[type="reset"]:hover {
+  transform: scale(1.05);
+  background-color: #989899;
+}
+
+.formulario {
+  display: flex;
+  align-items: center;
+  border: 1px solid #1259c3;
+  background-color: rgb(204, 198, 198);
+  border-radius: 10px;
+  margin: 3em auto;
+  max-width: 60%;
+}
+
+.formulario form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+div.formulario input {
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
+  width: 100%;
 }
 
 input:focus {
   border: 1px solid #1259c3;
 }
 
+.categorias_interes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+
+}
+
 @media (max-width: 360px) {
-  .wrapper {
+  /* .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0;
-  }
+  } */
   header {
     height: 100%;
   }
-  .form__searchbar {
+  /* .form__searchbar {
     width: 40%;
-  }
+  } */
   .compra_cuotas {
     margin: 10px 30px;
     align-items: center;
@@ -311,19 +361,19 @@ input:focus {
 /* Media Queries */
 /* mobile una columna */
 @media (min-width: 361px) {
-  .wrapper {
+  /* .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0;
-  }
+  } */
   header {
     height: 100%;
   }
-  .form__searchbar {
+  /* .form__searchbar {
     width: 40%;
-  }
+  } */
   .compra_cuotas {
     margin: 10px 30px;
     align-items: center;
@@ -426,6 +476,19 @@ input:focus {
   }
 
   main section div.products article {
-    flex: 1 1 22%; /* Escritorio: 4 columnas */
+    flex: 1 1 22%;
   }
+
+  nav.navbar {
+    display: flex;
+  }
+  
+  .navbar__item { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    align-items: right;
+  }
+
 }
