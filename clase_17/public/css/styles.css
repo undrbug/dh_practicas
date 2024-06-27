@@ -6,7 +6,7 @@
 
 body {
   font-family: Roboto;
-  background-color: #f0f0f0;
+  background-color: #ebebeb;
 }
 
 header {
@@ -14,6 +14,14 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.banner img {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -28,17 +36,27 @@ main {
   align-items: center;
 }
 
+.articulos {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los artículos se envuelvan en múltiples filas */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 article {
   margin: 10px;
   padding: 0px;
   box-sizing: border-box;
   display: flex;
-  /* justify-content: center;
-  justify-content: space-between; */
   flex-direction: column;
   margin: 10px;
   border-radius: 10px;
   flex: 1 1 100%;
+}
+
+.articulos article {
+  flex: 1 1 100%; /* Móvil: 1 columna */
 }
 
 article img {
@@ -47,11 +65,12 @@ article img {
 }
 
 .descripcion {
+  display: flex;
+  align-items: baseline;
   position: relative;
   border-top: 2px solid #ebebeb;
-  flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start; /* Alinea el texto a la izquierda */
   padding: 15px;
   border-radius: 0 0 10px 10px;
@@ -59,7 +78,6 @@ article img {
 }
 
 .truck {
-  /* margin-top: 10px; */
   display: block;
   font-size: 16px;
   padding: 5px;
@@ -132,17 +150,20 @@ img {
   size: 24px;
   text-align: center;
 }
-.descripciones {
-  margin-top: 10px;
-  order: 2; /* Cambia el orden a 2 */
+
+h3.descripciones {
+  margin: 10px;
   font-size: 16px;
 }
 .precios {
   font-size: 18px;
+  margin: 15px;
 }
 .descuentos {
+  width: 70%;
   font-size: 16px;
   color: #39b54a;
+  margin: 15px 0;
 }
 
 .form__searchbar {
@@ -184,6 +205,7 @@ H5 {
 
 footer {
   text-align: center;
+  margin: 0 20px;
   padding: 10px;
 }
 
@@ -193,12 +215,16 @@ footer {
   margin: 20px 0 10px 0;
 }
 
+.title_footer {
+  font-size: 1.3em;
+}
+
 .copyright {
   color: #1259c3;
   font-size: 1em;
   margin: 20px 0;
 }
-/* button type submit */
+
 button[type="submit"] {
   background-color: #1259c3;
   color: white;
@@ -232,9 +258,76 @@ input:focus {
   border: 1px solid #1259c3;
 }
 
-/* Media Queries */
+@media (max-width: 360px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  header {
+    height: 100%;
+  }
+  .form__searchbar {
+    width: 40%;
+  }
+  .compra_cuotas {
+    margin: 10px 30px;
+    align-items: center;
+  }
+  .navigation__menu__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  h3.descripciones, .navbar, .site {
+    display: none;
+  }
 
+  article:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    .descripciones {
+      display: block;
+    }
+    .descripcion {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    .descuentos {
+      margin: 15px;
+    }
+  }
+
+  footer {
+    text-align: center;
+    padding: 10px;
+  
+  }
+}
+
+/* Media Queries */
+/* mobile una columna */
 @media (min-width: 361px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  header {
+    height: 100%;
+  }
+  .form__searchbar {
+    width: 40%;
+  }
+  .compra_cuotas {
+    margin: 10px 30px;
+    align-items: center;
+  }
   .navigation__menu__items {
     display: flex;
     justify-content: space-between;
@@ -242,17 +335,32 @@ input:focus {
     padding: 10px;
   }
 
-  .descripciones,
-  .navbar,
-  .site {
+  h3.descripciones, .navbar, .site {
     display: none;
   }
-
-  article:hover .descripciones {
+  
+  article:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
   }
+
+  main section div.products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main section div.products article {
+    flex: 1 1 100%; /* Móvil: 1 columna */
+  }
+
 }
 
+
+
+/* tablet */
+/* dos articulos, dos culumnas */
 @media (min-width: 769px) {
   .navigation__menu__items {
     display: flex;
@@ -261,31 +369,63 @@ input:focus {
     padding: 10px;
   }
 
-  .articulos article {
-    flex: 1 1 25%; /* Cada artículo ocupa el 50% del ancho */
-  }
-
-  main {
+   main {
     flex-wrap: wrap;
   }
 
-  article {
+  article:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
   }
 
-  .descripciones,
+  h3.descripciones,
   .navbar,
   .site {
     display: block;
   }
 
+  h3.descripciones {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    margin: 10px;
+  }
+
+  .site {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+  }
+
   .burger-menu {
     display: none;
   }
+
+  main section div.products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main section div.products article {
+    flex: 1 1 48%; /* Móvil: 1 columna */
+  }
 }
 
+/* desktop */
+/* cuatro articulos, cuatro columnas */
 @media (min-width: 1024px) {
-  .articulos article {
-    flex: 1 1 25%; /* Cada artículo ocupa el 25% del ancho */
+  main section div.products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main section div.products article {
+    flex: 1 1 22%; /* Escritorio: 4 columnas */
   }
 }
