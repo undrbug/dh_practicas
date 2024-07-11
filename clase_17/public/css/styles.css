@@ -43,7 +43,8 @@ form.form__searchbar {
   padding: 5px;
 }
 
-.form__searchbar, .searchbar__button {
+.form__searchbar,
+.searchbar__button {
   position: absolute;
   display: flex;
   align-items: center;
@@ -103,11 +104,11 @@ article {
   flex-direction: column;
   margin: 10px;
   border-radius: 10px;
-  flex: 1 1 100%;
+  /* flex: 1 1 100%; */
 }
 
 .articulos article {
-  flex: 1 1 100%; /* Móvil: 1 columna */
+  flex: 1 1 80%; /* Móvil: 1 columna */
 }
 
 article img {
@@ -251,7 +252,7 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   transform: scale(1.05);
-  background-color: #0f2b55;
+  background-color: #0022aa;
 }
 
 button[type="reset"] {
@@ -273,7 +274,7 @@ button[type="reset"]:hover {
 .formulario {
   display: flex;
   align-items: center;
-  border: 1px solid #1259c3;
+  /* border: 1px solid #1259c3; */
   background-color: rgb(204, 198, 198);
   border-radius: 10px;
   margin: 3em auto;
@@ -305,7 +306,6 @@ input:focus {
   align-items: center;
   flex-wrap: wrap;
   margin: 20px;
-
 }
 
 @media (max-width: 360px) {
@@ -332,10 +332,43 @@ input:focus {
     align-items: center;
     padding: 10px;
   }
-  h3.descripciones, .navbar, .site {
+  h3.descripciones,
+  .navbar,
+  .site {
     display: none;
   }
 
+  article:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    .descripciones {
+      display: block;
+    }
+    .descripcion {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    /* .descuentos {
+      margin: 15px;
+    } */
+  }
+
+  footer {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Media Queries */
+/* mobile una columna */
+@media (min-width: 361px) {
+  header {
+    height: 100%;
+  }
+  .compra_cuotas {
+    margin: 10px 30px;
+    align-items: center;
+  }
   article:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     .descripciones {
@@ -350,34 +383,6 @@ input:focus {
       margin: 15px;
     }
   }
-
-  footer {
-    text-align: center;
-    padding: 10px;
-  
-  }
-}
-
-/* Media Queries */
-/* mobile una columna */
-@media (min-width: 361px) {
-  /* .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-  } */
-  header {
-    height: 100%;
-  }
-  /* .form__searchbar {
-    width: 40%;
-  } */
-  .compra_cuotas {
-    margin: 10px 30px;
-    align-items: center;
-  }
   .navigation__menu__items {
     display: flex;
     justify-content: space-between;
@@ -385,10 +390,12 @@ input:focus {
     padding: 10px;
   }
 
-  h3.descripciones, .navbar, .site {
+  h3.descripciones,
+  .navbar,
+  .site {
     display: none;
   }
-  
+
   article:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
   }
@@ -402,12 +409,9 @@ input:focus {
   }
 
   main section div.products article {
-    flex: 1 1 100%; /* Móvil: 1 columna */
+    flex: 1 1 80%; 
   }
-
 }
-
-
 
 /* tablet */
 /* dos articulos, dos culumnas */
@@ -419,7 +423,7 @@ input:focus {
     padding: 10px;
   }
 
-   main {
+  main {
     flex-wrap: wrap;
   }
 
@@ -427,7 +431,7 @@ input:focus {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
   }
 
-  h3.descripciones,
+  
   .navbar,
   .site {
     display: block;
@@ -460,13 +464,15 @@ input:focus {
   }
 
   main section div.products article {
-    flex: 1 1 48%; /* Móvil: 1 columna */
+    flex: 1 1 30%; /* Móvil: 1 columna */
   }
 }
 
 /* desktop */
 /* cuatro articulos, cuatro columnas */
 @media (min-width: 1024px) {
+
+
   main section div.products {
     display: flex;
     flex-direction: row;
@@ -476,19 +482,44 @@ input:focus {
   }
 
   main section div.products article {
-    flex: 1 1 22%;
+    flex: 1 1 20%;
   }
 
   nav.navbar {
     display: flex;
   }
-  
-  .navbar__item { 
+
+  .navbar__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     align-items: right;
   }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+
+  .columnas {
+    flex: 1 1 30%;
+    margin: 10px;
+  }
+
+  .columnas i:hover {
+    color: #0022aa;
+
+  }
+
+  .copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
 
 }
