@@ -5,10 +5,10 @@ const routerMain = require('./routes/main.route.js');
 
 // Configuración del motor de vistas
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', 'views');
 
 // Middleware para archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 // Rutas
 app.use('/', routerMain);
