@@ -23,6 +23,6 @@ app.use("/", routerAlgo)
 
 
 
-app.listen(3000, (error) => {
+app.listen(PORT, (error) => {
     error ? console.log(`Error en el servidor: ${error}`) : console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
