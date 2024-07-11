@@ -5,7 +5,11 @@ const app = express();
 
 const mainController = {
     home: (req, res) => {
-        res.render('home');
+        res.render('home', {
+            titulo: 'mvc-Ejs',
+            subtitulo: 'Home',
+
+        });
     }
 };
 
