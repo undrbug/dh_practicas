@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "nombre": "Spaghetti Carbonara",
+        "descripcion": "Pasta italiana con una mezcla de huevo, queso, panceta y pimienta negra.",
+        "imagen": "images/Carpaccio-de-salmon.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Ensalada César",
+        "descripcion": "Lechuga romana, crutones, queso parmesano y aderezo César.",
+        "imagen": "images/Mousse-de-arroz-con-leche.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Pizza Margherita",
+        "descripcion": "Pizza clásica con salsa de tomate, mozzarella fresca y albahaca.",
+        "imagen": "images/Carpaccio-de-salmon.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Tacos al Pastor",
+        "descripcion": "Tacos de cerdo marinados con piña, cebolla y cilantro, servidos en tortillas de maíz.",
+        "imagen": "images/esparragos.png"
+    },
+    {
+        "id": 5,
+        "nombre": "Sushi Nigiri",
+        "descripcion": "Bocado de arroz cubierto con una rebanada de pescado crudo o marisco.",
+        "imagen": "images/Carpaccio-de-salmon.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Ramen",
+        "descripcion": "Sopa japonesa con fideos, caldo, carne y vegetales.",
+        "imagen": "images/esparragos.png"
+    },
+    {
+        "id": 7,
+        "nombre": "Hamburguesa Clásica",
+        "descripcion": "Hamburguesa de carne con lechuga, tomate, cebolla, queso cheddar y salsa especial.",
+        "imagen": "images/Carpaccio-de-salmon.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Paella",
+        "descripcion": "Plato español de arroz con mariscos, pollo y azafrán.",
+        "imagen": "images/esparragos.png"
+    },
+    {
+        "id": 9,
+        "nombre": "Falafel",
+        "descripcion": "Croquetas de garbanzos fritas, servidas con salsa de yogur y ensalada.",
+        "imagen": "images/Risotto-berenjena-queso-cabra.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Pad Thai",
+        "descripcion": "Fideos tailandeses salteados con camarones, tofu, cacahuates y salsa de tamarindo.",
+        "imagen": "images/Mousse-de-arroz-con-leche.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Tarta de Queso",
+        "descripcion": "Postre cremoso con base de galleta y cobertura de frutas.",
+        "imagen": "images/esparragos.png"
+    },
+    {
+        "id": 12,
+        "nombre": "Crepes",
+        "descripcion": "Delgadas panquecas francesas rellenas de frutas, chocolate o crema.",
+        "imagen": "images/Carpaccio-de-salmon.jpg"
+    }
+]

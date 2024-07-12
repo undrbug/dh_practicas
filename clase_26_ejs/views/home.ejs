@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
-    <title><%= titulo %></title>
-</head>
-<body>
-    <%= subtitulo %>
-    <h1>Bienvenido a mi Proyecto MVC con Node.js y Express</h1>
-</body>
-<footer>
-    
-</footer>
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        
+        <%- include('partials/header.ejs') %>
+
+        <%- include('partials/menu.ejs') %>
+    </body>
+
 </html>
