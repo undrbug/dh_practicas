@@ -1,0 +1,17 @@
+[
+      {
+        "title": "Sobre Nosotros",
+        "description": "Somos una empresa dedicada a proporcionar las mejores soluciones tecnológicas.",
+        "team": "Juan Pérez, role: CEO, Ana García, role: CTO, Luis Rodríguez, role: Desarrollador"
+      },
+      {
+        "title": "Acerca de Nosotros",
+        "description": "Nuestra misión es innovar y liderar en el sector tecnológico.",
+        "team": "María López, rol: CEO, Carlos Martínez, rol: CTO}, Laura Sánchez, rol: Desarrolladora" 
+      },
+      {
+        "title": "Quiénes Somos",
+        "description": "Brindamos servicios tecnológicos avanzados para empresas de todo el mundo.",
+        "team": "Pedro Gómez, rol: CEO, Sofía Díaz, rol: CTO, Miguel Torres, rol: Desarrollador"
+      }
+]

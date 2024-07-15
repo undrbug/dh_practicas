@@ -7,8 +7,16 @@
         <%- include('partials/navbar.ejs') %>
         
         <%- include('partials/header.ejs') %>
+        
+        <h1>
+            <% if (menu) { %>
+                <%- include('partials/menu.ejs', {menu: menu}) %>
+              <% } else { %>
+                <%- include('partials/menu.ejs') %>
+              <% } %>
+        </h1>
 
-        <%- include('partials/menu.ejs') %>
+
     </body>
 
 </html>
