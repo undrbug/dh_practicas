@@ -3,7 +3,7 @@
         "id": 1,
         "nombre": "Spaghetti Carbonara",
         "descripcion": "",
-        "imagen": "images/Carpaccio-de-salmon.jpg",
+        "imagen": "/images/Carpaccio-de-salmon.jpg",
         "precio": 350
     },
     {

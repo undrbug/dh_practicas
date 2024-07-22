@@ -11,6 +11,7 @@ const mainController = {
     },
     detalle: (req, res) => {
         const id = req.params.id;
+        //metodo find
         const dataquery = data.filter((item) => item.id == id);
         //una forma de hacerlo
         const menu = {
@@ -25,6 +26,7 @@ const mainController = {
         res.render('home.ejs', {menu: menu});
     },
     about: (req, res) => {
+        //muestro un about aleatorio
         const random = Math.floor(Math.random() * aboutData.length);
         const about = aboutData[random];
         res.render('about.ejs', {about: about});
