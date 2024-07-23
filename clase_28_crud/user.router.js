@@ -6,8 +6,8 @@ router.get('/', (req, res) => {
 });
 router.get('/users', userController.listarUsuarios);
 router.get('/users/:id', userController.buscarUsuario);
-router.post('/users', userController.crearUsuario);
-router.put('/users', userController.actualizarUsuario);
+router.post('/users/add', userController.crearUsuario);
+router.put('/users/:id', userController.actualizarUsuario);
 router.delete('/users/:id', userController.borrarUsuario);
 
 
