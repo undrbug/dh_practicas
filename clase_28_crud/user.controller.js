@@ -1,5 +1,18 @@
 const fs = require('fs');
+const path = require('path');
 const express = require('express');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, './public/images/avatar'))
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + '.jpg')
+    }
+})
+
+const upload = multer({ storage: storage });
 
 let usersList = fs.readFileSync('users.json', 'utf-8');
 let usuarioArray = JSON.parse(usersList);

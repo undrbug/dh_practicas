@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/users/add" method="POST">
+    <!-- para usar multer hay que agrgar al formulario enctype -->
+    <form action="/users/add" method="POST" enctype="multipart/form-data">
         <input type="text" name="nombre" placeholder="Nombre" required>
         <br>
         <input type="text" name="apellido" placeholder="Apellido" required>
