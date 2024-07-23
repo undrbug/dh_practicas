@@ -3,13 +3,7 @@ const methodOverride = require('method-override');
 const userRouter = require('./user.router');
 const path = require('path');
 const ejs = require('ejs');
-const fs = require('fs');
 
-const users = {
-    id: "1",
-    nombre: "hgauna",
-    email: "pepe@argento.com"
-};
 
 //dirname guarda la ruta actual. La ruta desde donde se esta ejecutando la sentencia
 // const ruta = path.join(__dirname, 'users/');
@@ -32,9 +26,15 @@ app.use(methodOverride('_method'));
 app.use('/', userRouter)
 
 app.use((req, res, next) => {
-    res.status(404).render('Not-found.ejs');
+    res.status(404).render('not-found.ejs');
 })
 
+// app.use((err, req, res, next) => {
+//     console.error(err.stack);
+//     res.status(500).send('Algo salió mal');
+// })
+
+// fs.writeFileSync('users.json', JSON.stringify(usersArray));
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
