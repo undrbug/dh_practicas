@@ -1,5 +1,8 @@
 # ignorar archivos pdf
 *.pdf
+#ignorar archivos comprimidos
+*.zip
+*.rar
 # ignorar carpeta node_modules
 node_modules/
 # proyecto integrador
