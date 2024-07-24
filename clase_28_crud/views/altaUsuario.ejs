@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('head.ejs') %>
+
+    <body>
+        <div class="container">
+            <h1>Alta de Usuarios</h1>
+
+            <!-- para usar multer hay que agrgar al formulario enctype -->
+            <form action="/users/add" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <br>
+                <input type="text" name="apellido" placeholder="Apellido" required>
+                <br>
+                <input type="email" name="email" placeholder="Email" required>
+                <br>
+                <button type="submit">agregar</button>
+
+            </form>
+        </div>
+        <form action="/" method="GET">
+            <button type="submit">Volver</button>
+        </form>
+    </body>
+
+</html>

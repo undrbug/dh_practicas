@@ -1,23 +1,17 @@
 const fs = require('fs');
-const path = require('path');
 const express = require('express');
-const multer = require('multer');
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, './public/images/avatar'))
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + '.jpg')
-    }
-})
-
-const upload = multer({ storage: storage });
 
 let usersList = fs.readFileSync('users.json', 'utf-8');
-let usuarioArray = JSON.parse(usersList);
+let usuarioArray = [];
+if (usersList != '') {
+    usuarioArray = JSON.parse(usersList);
+}
 
 const userController = {
+    crearUsuarioVista: (req, res) => {
+        res.render('altaUsuario.ejs');
+    },
     crearUsuario: (req, res) => {
         const userNew = {
             "id": (usuarioArray.length + 1),
@@ -26,14 +20,15 @@ const userController = {
             "email": req.body.email
         }
         usuarioArray.push(userNew)
-        res.send(usuarioArray);
         fs.writeFileSync('users.json', JSON.stringify(usuarioArray));
+        res.render('listarUsuarios.ejs', { usuarioArray: usuarioArray });
     },
     listarUsuarios: (req, res) => {
-        res.send(usuarioArray);
+        res.render('listarUsuarios.ejs', { usuarioArray: usuarioArray });
+        
     },
     actualizarUsuario: (req, res) => {
-        const id = req.body.id;
+        const {id} = req.params;
         const usuario = usuarioArray.find(usuario => usuario.id == id);
         if (!usuario) {
             res.send('Usuario no encontrado');
@@ -45,12 +40,12 @@ const userController = {
         usuario.email = req.body.email
         usuarioArray.push(usuario);
         fs.writeFileSync('users.json', JSON.stringify(usuarioArray));
-        res.send(usuario);
+        res.redirect('/');
 
 
     },
     borrarUsuario: (req, res) => {
-        const id = req.params.id;
+        const {id} = req.params;
         const usuario = usuarioArray.find(usuario => usuario.id == id);
         if (!usuario) {
             res.send('Usuario no encontrado');
@@ -58,7 +53,7 @@ const userController = {
         const index = usuarioArray.indexOf(usuario);
         usuarioArray.splice(index, 1);
         fs.writeFileSync('users.json', JSON.stringify(usuarioArray));
-        res.send(usuario);
+        res.redirect('/users');
     },
     buscarUsuario: (req, res) => {
         const id = req.params.id;
@@ -67,6 +62,11 @@ const userController = {
             res.send('Usuario no encontrado');
         }
         res.send({usuario: usuario});
+    },
+    editarUsuario: (req, res) => {
+        const id = req.params.id;
+        const usuario = usuarioArray.find(usuario => usuario.id == id);
+        res.render('editarUsuario.ejs', {usuario: usuario});
     }
 
 }

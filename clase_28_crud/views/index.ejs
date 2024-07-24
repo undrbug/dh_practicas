@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- para usar multer hay que agrgar al formulario enctype -->
-    <form action="/users/add" method="POST" enctype="multipart/form-data">
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <br>
-        <input type="text" name="apellido" placeholder="Apellido" required>
-        <br>
-        <input type="email" name="email" placeholder="Email" required>
-        <br>
-        <button type="submit">agregar</button>
+<html lang="es">
 
-    </form>
-</body>
+<%- include('head.ejs') %>
+
+    <body>
+        <div class="container">
+            <h1>HOME</h1>
+            <a href="/users/add">Alta de Usuarios</a>
+            <br>
+            <a href="/users">Lista de Usuarios</a>
+        </div>
+    </body>
+
 </html>

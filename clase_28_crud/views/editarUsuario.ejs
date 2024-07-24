@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head.ejs') %>
+
+    <body>
+        <div class="container">
+            <h1>Editar Usuario</h1>
+            <form action="/users/<%= usuario.id %>?_method=put" method="POST">
+                <h3><%= usuario.id %></h3>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" value="<%= usuario.nombre %>">
+                <br>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" value="<%= usuario.apellido %>">
+                <br>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="<%= usuario.email %>">
+                <br>
+                <button type="submit">Editar</button>
+            </form>
+
+        </div>
+        <form action="/users" method="GET">
+            <button type="submit">Volver</button>
+        </form>
+    </body>
+
+</html>
