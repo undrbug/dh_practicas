@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('head.ejs') %>
+
+<body>
+
+    <div class="card">
+      <img src="/images/avatar/<%= usuario.avatar %>" alt="una imagen">
+        <div class="card-body">
+          <h2 class="card-title"><%= usuario.nombre %></h2>
+          <p class="card-text"><%= usuario.email %></p>
+          <a href="/usuarios/editar/<%= usuario.id %>" class="btn btn-primary">Editar</a>
+          <a href="/usuarios/eliminar/<%= usuario.id %>" class="btn btn-danger">Eliminar</a>
+        </div>
+      </div>
+      <form action="/" method="GET">
+        <button type="submit">Volver</button>
+    </form>
+    </body>
+</html>

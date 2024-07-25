@@ -55,8 +55,14 @@ const userController = {
     editarUsuario: (req, res) => {
         const usuario = dataSource.find(req.params.id);
         res.render('editarUsuario.ejs', {usuario: usuario});
+    },
+    cardUsuario: (req, res) => {
+        const usuario = dataSource.find(req.params.id);
+        if (!usuario) {
+            res.send('Usuario no encontrado');
+        }
+        res.render('cardUsuario.ejs', {usuario: usuario});
     }
-
 }
 
 module.exports = userController;

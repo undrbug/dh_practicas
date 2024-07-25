@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
 });
 router.get('/users', userController.listarUsuarios);
 router.get('/users/add', userController.crearUsuarioVista);
+router.get('/users/card/:id', userController.cardUsuario);
 router.post('/users/add', fileupload.single('imagen'), userController.crearUsuario);
 router.get('/users/:id', userController.buscarUsuario);
 router.get('/users/edit/:id', userController.editarUsuario);
