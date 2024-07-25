@@ -1,71 +1,59 @@
-const fs = require('fs');
-const express = require('express');
+const dataSource = require('./services/dataSource');
+const uuidv4 = require('uuid').v4;
 
-
-let usersList = fs.readFileSync('users.json', 'utf-8');
-let usuarioArray = [];
-if (usersList != '') {
-    usuarioArray = JSON.parse(usersList);
-}
+dataSource.init();
 
 const userController = {
     crearUsuarioVista: (req, res) => {
         res.render('altaUsuario.ejs');
     },
     crearUsuario: (req, res) => {
+        const avatar = (req.file) ? usuario.avatar = usuario.avatar = req.file.filename : 'default.webp';
         const userNew = {
-            "id": (usuarioArray.length + 1),
+            "id": uuidv4(),
             "nombre": req.body.nombre,
             "apellido": req.body.apellido,
-            "email": req.body.email
+            "email": req.body.email,
+            "avatar": avatar
         }
-        usuarioArray.push(userNew)
-        fs.writeFileSync('users.json', JSON.stringify(usuarioArray));
-        res.render('listarUsuarios.ejs', { usuarioArray: usuarioArray });
+        dataSource.create(userNew);
+        res.render('listarUsuarios.ejs', { usuarioArray: dataSource.findAll() });
     },
     listarUsuarios: (req, res) => {
-        res.render('listarUsuarios.ejs', { usuarioArray: usuarioArray });
+        res.render('listarUsuarios.ejs', { usuarioArray: dataSource.findAll() });
         
     },
     actualizarUsuario: (req, res) => {
-        const {id} = req.params;
-        const usuario = usuarioArray.find(usuario => usuario.id == id);
+        const usuario = dataSource.find(req.params.id);
         if (!usuario) {
             res.send('Usuario no encontrado');
         }
-        const index = usuarioArray.indexOf(usuario);
-        usuarioArray.splice(index, 1);
         usuario.nombre = req.body.nombre;
         usuario.apellido = req.body.apellido;
-        usuario.email = req.body.email
-        usuarioArray.push(usuario);
-        fs.writeFileSync('users.json', JSON.stringify(usuarioArray));
-        res.redirect('/');
+        usuario.email = req.body.email;
+        (req.file) ? usuario.avatar = usuario.avatar = req.file.filename : '/images/avatar/default.webp';
+        dataSource.update(usuario);
+        res.redirect('/users');
 
 
     },
     borrarUsuario: (req, res) => {
-        const {id} = req.params;
-        const usuario = usuarioArray.find(usuario => usuario.id == id);
+        const usuario = dataSource.find(req.params.id);
         if (!usuario) {
             res.send('Usuario no encontrado');
         }
-        const index = usuarioArray.indexOf(usuario);
-        usuarioArray.splice(index, 1);
-        fs.writeFileSync('users.json', JSON.stringify(usuarioArray));
+        dataSource.delete(usuario.id);
         res.redirect('/users');
     },
     buscarUsuario: (req, res) => {
-        const id = req.params.id;
-        const usuario = usuarioArray.find(usuario => usuario.id == id);
+        const usuario = dataSource.find(req.params.id);
         if (!usuario) {
             res.send('Usuario no encontrado');
         }
         res.send({usuario: usuario});
     },
     editarUsuario: (req, res) => {
-        const id = req.params.id;
-        const usuario = usuarioArray.find(usuario => usuario.id == id);
+        const usuario = dataSource.find(req.params.id);
         res.render('editarUsuario.ejs', {usuario: usuario});
     }
 

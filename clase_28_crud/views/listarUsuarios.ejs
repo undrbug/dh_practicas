@@ -27,13 +27,15 @@
                                 <%= user.email %>
                             </td>
                             <td>
-                                <form action="/users/edit/<%= user.id %>" method="GET">
-                                    <button type="submit">Editar</button>
-                                </form>
+                                <div class="botones">
+                                    <form action="/users/edit/<%= user.id %>" method="GET">
+                                        <button type="submit">Editar</button>
+                                    </form>
 
-                                <form action="/users/<%= user.id %>?_method=delete" method="POST">
-                                    <button type="submit">Eliminar</button>
-                                </form>
+                                    <form action="/users/<%= user.id %>?_method=delete" method="POST">
+                                        <button type="submit">Eliminar</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         <% }) %>

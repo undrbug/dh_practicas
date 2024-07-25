@@ -8,12 +8,14 @@
             <h1>Alta de Usuarios</h1>
 
             <!-- para usar multer hay que agrgar al formulario enctype -->
-            <form action="/users/add" method="POST">
+            <form action="/users/add" method="POST" enctype="multipart/form-data">
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <br>
                 <input type="text" name="apellido" placeholder="Apellido" required>
                 <br>
                 <input type="email" name="email" placeholder="Email" required>
+                <br>
+                <input type="file" name="imagen" id="imagen">
                 <br>
                 <button type="submit">agregar</button>
 
