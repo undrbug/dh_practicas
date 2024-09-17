@@ -1,0 +1,19 @@
+<%- include('./partials/header.ejs') %>
+
+    <h1><%= actor.first_name %> <%= actor.last_name %> </h1>
+    <br>
+    <p>Rating: <%= actor.rating %> </p>
+    <p>favorite_movie_id: <%= actor.favorite_movie_id %> </p>
+    <form action="/actors/edit/<%= actor.id %>" method="GET">
+        <button type="submit">Editar</button>
+    </form>
+    <form action="/actors/list">
+        <button type="submit">Cancelar</button>
+    </form>
+    <form action="/actors/delete/<%= actor.id %>">
+        <button type="submit">Eliminar</button>
+    </form>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

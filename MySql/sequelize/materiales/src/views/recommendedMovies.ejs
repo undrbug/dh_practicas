@@ -1,0 +1,16 @@
+<%- include('./partials/header.ejs') %>
+
+    <h1>ORDENADAS POR RATING</h1>
+    <ul>
+        <% for( let i = 0; i < movies.length; i++ ) { %>
+        <li>
+            <a href="/movies/detail/<%=movies[i].id%>"><%= movies[i].title %> </a> <br>
+            <%= 'RATING: ' + movies[i].rating %> 
+        </li>
+        <% } %>
+        
+    </ul>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

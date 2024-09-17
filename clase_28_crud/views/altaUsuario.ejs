@@ -9,11 +9,20 @@
 
             <!-- para usar multer hay que agrgar al formulario enctype -->
             <form action="/users/add" method="POST" enctype="multipart/form-data">
-                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="nombre" placeholder="Nombre" required value="<%= locals.old && old.nombre %>">
+                <% if (locals.errors && errors.nombre) { %>
+                    <p><%= errors.nombre.msg %></p>
+                    <% } %>
                 <br>
-                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input type="text" name="apellido" placeholder="Apellido" required value="<%= locals.old && old.apellido%>">
+                <% if (locals.errors && errors.apellido) { %>
+                    <p><%= errors.apellido.msg %></p>
+                    <% } %>
                 <br>
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" name="email" placeholder="Email" required value="<%= locals.old && old.email%>">
+                <% if (locals.errors && errors.email) { %>
+                    <p><%= errors.email.msg %></p>
+                    <% } %>
                 <br>
                 <input type="file" name="imagen" id="imagen">
                 <br>

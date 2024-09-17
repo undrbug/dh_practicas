@@ -1,5 +1,7 @@
 const dataSource = require('./services/dataSource');
 const uuidv4 = require('uuid').v4;
+const {validationResult} = require('express-validator');
+
 
 dataSource.init();
 
@@ -8,7 +10,13 @@ const userController = {
         res.render('altaUsuario.ejs');
     },
     crearUsuario: (req, res) => {
-        const avatar = (req.file) ? usuario.avatar = usuario.avatar = req.file.filename : 'default.webp';
+
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.render('altaUsuario.ejs', { errors: errors.mapped(), old: req.body, oldFile: req.file });
+        }
+
+        const avatar = (req.file) ? req.file.filename : 'default.webp';
         const userNew = {
             "id": uuidv4(),
             "nombre": req.body.nombre,
@@ -16,8 +24,11 @@ const userController = {
             "email": req.body.email,
             "avatar": avatar
         }
+
         dataSource.create(userNew);
-        res.render('listarUsuarios.ejs', { usuarioArray: dataSource.findAll() });
+        const usuarioArray = dataSource.findAll();
+        res.render('listarUsuarios.ejs', {usuarioArray});
+        
     },
     listarUsuarios: (req, res) => {
         res.render('listarUsuarios.ejs', { usuarioArray: dataSource.findAll() });
@@ -43,7 +54,7 @@ const userController = {
             res.send('Usuario no encontrado');
         }
         dataSource.delete(usuario.id);
-        res.redirect('/users');
+        res.render('listarUsuarios.ejs', { usuarioArray: dataSource.findAll() });
     },
     buscarUsuario: (req, res) => {
         const usuario = dataSource.find(req.params.id);

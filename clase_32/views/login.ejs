@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if(locals.errors) { %>
+        <ul>
+            <% locals.errors.forEach(error => { %>
+                <li><%= error.msg %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+    <form action="/login" method="POST">
+        <label for="name">Ingrese su nombre</label>
+        <input type="text" name="name" id="name"  value="<%= locals.old && old.name ? old.name : ''%>">
+        <br>
+        <label for="color">Elija un color</label>
+        <select name="color" id="color" >
+            <option value="red" <%= locals.old && old.category === 'red' ? 'selected' : "" %>>
+                Rojo
+            </option>
+            <option value="blue" <%= locals.old && old.category === 'blue' ? 'selected' : "" %>>
+                Azul
+            </option>
+            <option value="green" <%= locals.old && old.category === 'green' ? 'selected' : "" %>>
+                Verde
+            </option>
+            <option value="yellow" <%= locals.old && old.category === 'yellow' ? 'selected' : "" %>>
+                Amarillo
+            </option>
+        </select>
+        <br>
+        <label for="email">Ingrese su email</label>
+        <input type="email" name="email" id="email"  value="<%= locals.old && old.email ? old.email : ''%>">
+
+        <br>
+        <label for="age">Ingrese su edad</label>
+        <input type="number" name="age" id="age" value="<%= locals.old && old.age ? old.age : ''%>">
+        <br>
+        <button type="submit">Enviar</button>
+
+    </form>
+</body>
+</html>

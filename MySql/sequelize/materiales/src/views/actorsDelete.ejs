@@ -1,0 +1,17 @@
+<%- include('./partials/header.ejs') %>
+
+    <h1>Estas seguro de querer borrar este actor: <%= actor.first_name %>, <%= actor.last_name %>???</h1>
+    <p>
+        <form action="/actors/delete/<%= actor.id %>?_method=delete" method="POST">
+            <br>
+            <button class="botonBorrar" type="submit">Eliminar</button>
+            
+            <a  class="botonVolver" href="/actors/list">Listado de Actores</a></p>
+
+        </form>
+    </p>
+    
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

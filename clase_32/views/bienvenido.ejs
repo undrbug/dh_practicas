@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: <%= user.color %>;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Bienvenido!</h1>
+    <p>Estás logueado como <%= user.name %></p>
+    <p>Elegiste el color <%= user.color %></p>
+    <p>Tu email es <%= user.email %></p>
+    <p>Tu edad es <%= user.age %></p>
+    <a href="/logout">Cerrar sesión</a>
+    <br>
+
+</body>
+</html>

@@ -5,11 +5,6 @@ const path = require('path');
 const ejs = require('ejs');
 
 
-//dirname guarda la ruta actual. La ruta desde donde se esta ejecutando la sentencia
-// const ruta = path.join(__dirname, 'users/');
-// console.log(ruta);
-// fs.writeFileSync(`users.json`, "pepe: otro" );
-
 const app = express();
 
 app.use(express.json());
@@ -25,9 +20,9 @@ app.use(methodOverride('_method'));
 
 app.use('/', userRouter)
 
-app.use((req, res, next) => {
-    res.status(404).render('not-found.ejs');
-})
+// app.use((req, res, next) => {
+//     res.status(404).render('not-found.ejs');
+// })
 
 // app.use((err, req, res, next) => {
 //     console.error(err.stack);

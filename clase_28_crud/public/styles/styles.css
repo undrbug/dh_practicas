@@ -16,6 +16,12 @@ body {
     padding: 20px;
 }
 
+.container-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
 h1 {
     font-size: 2em;
     color: #333;

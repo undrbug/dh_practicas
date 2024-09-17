@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs') %>
+    <h1 class="titulo">Agregar Actor</h1>
+    <br>
+    <section class="formulario">
+        <form action="/actors/add" method="POST">
+            <label for="first_name">Nombre </label>
+            <p><input type="text" name="first_name" id="" required></p>
+            <label for="last_name">Apellido </label>
+            <p><input type="text" name="last_name" id="" required> </p>
+            <label for="rating">Rating </label>
+            <p><input type="number" name="rating" id="" required></p>
+            <label for="favorite_movie_id">Fav_movie_id </label>
+            <p><input type="number" name="favorite_movie_id" id="" required></p>
+            <br>
+            <button class="botonAgregar" type="submit">Agregar</button>
+        </form>
+        <br><a href="/actors/list">
+            <button>Cancelar</button>
+        </a>
+    </section>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

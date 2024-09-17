@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs') %>
+    <h1 class="titulo">Editar Actor</h1>
+    <br>
+    <section class="formulario">
+        <form action="/actors/edit/<%= actor.id %>?_method=PATCH" method="POST">
+            <label for="first_name">Nombre </label>
+            <p><input type="text" name="first_name" id="" value="<%= actor.first_name %>" required></p>
+            <label for="last_name">Apellido </label>
+            <p><input type="text" name="last_name" id="" value="<%= actor.last_name %>" required> </p>
+            <label for="rating">Rating </label>
+            <p><input type="number" name="rating" id="" value="<%= actor.rating %>" required></p>
+            <label for="favorite_movie_id">Fav_movie_id </label>
+            <p><input type="number" name="favorite_movie_id" id="" value="<%= actor.favorite_movie_id %>" required></p>
+            <br>
+            <button class="botonAgregar" type="submit">Guardar</button>
+        </form>
+        <form action="/actors/list">
+            <button type="submit">Cancelar</button>
+        </form>
+    </section>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

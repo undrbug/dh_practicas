@@ -10,8 +10,18 @@
         <div class="card-body">
           <h2 class="card-title"><%= usuario.nombre %></h2>
           <p class="card-text"><%= usuario.email %></p>
-          <a href="/usuarios/editar/<%= usuario.id %>" class="btn btn-primary">Editar</a>
-          <a href="/usuarios/eliminar/<%= usuario.id %>" class="btn btn-danger">Eliminar</a>
+          
+          <div class="container-btn">
+
+            <form action="/users/edit/<%= usuario.id %>?_method=PUT">
+              <button type="submit">Editar</button>
+            </form>
+            <form action="/users/<%= usuario.id %>?_method=delete" method="POST">
+              <button type="submit">Eliminar</button>
+            </form>
+            
+          </div>
+        
         </div>
       </div>
       <form action="/" method="GET">

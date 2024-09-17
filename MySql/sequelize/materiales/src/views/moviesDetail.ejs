@@ -1,0 +1,32 @@
+<%- include('./partials/header.ejs') %>
+
+  <h1>
+    <%= movie.title %>
+  </h1>
+  <br>
+  <div class="detail-container">
+    <p>RATING: <%= movie.rating %>
+    </p>
+    <p>PREMIOS: <%= movie.awards %>
+    </p>
+    <p>DURACION: <%= movie.length + ' min' %>
+    </p>
+    <p>FECHA DE ESTRENO: <%= movie.release_date %>
+    </p>
+    <p>GENERO: <%= movie.genres.name %>
+    </p>
+  </div>
+  <form action="/movies/delete/<%= movie.id %>" method="get">
+    <button type="submit">eliminar peli</button>
+  </form>
+  <form action="/movies/edit/<%= movie.id %>" method="get">
+    <button type="submit">editar peli</button>
+  </form>
+  <form action="/movies/add">
+    <button type="submit">agregar peli</button>
+  </form>
+
+  <%- include('./partials/footer.ejs') %>
+    </body>
+
+    </html>

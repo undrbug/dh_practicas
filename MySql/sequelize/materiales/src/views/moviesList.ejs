@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs') %>
+
+
+<h1>LISTADO DE PELÍCULAS</h1>
+
+<%- include(('./partials/search.ejs')) %>
+
+  <ul>
+    <% for( let i=0; i < movies.length; i++ ) { %>
+      <li>
+          <a href="/movies/detail/<%= movies[i].id %>">
+            <%= movies[i].Title %> 
+          </a>
+        </li>
+      <% } %>
+  </ul>
+
+  <%- include('./partials/footer.ejs') %>
+    </body>
+
+    </html>
