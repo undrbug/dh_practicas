@@ -1,18 +1,18 @@
 window.addEventListener("load", () => {    
-	let titulo = document.querySelector(".moviesAddTitulo");
-	let formulario = document.querySelector("#formulario");
+    let formulario = document.querySelector("#formulario");
+    let titulo = document.querySelector(".moviesAddTitulo");
 	let article = document.querySelector("article");
 	titulo.innerHTML = "AGREGAR PELÍCULA";
 	titulo.classList.add("titulo");
 	article.classList.add("fondoTransparente");
 	formulario.classList.add("fondoCRUD");
-
+    
 	titulo.addEventListener("mouseover", () => {
 		titulo.classList.toggle("color");
 	});
-
+    
+    
 	let inputTitle = document.querySelector("#titulo");
-
 	let estadoSecreto = 0;
 	let key = "";
 	inputTitle.addEventListener("keydown", (e) => {
@@ -36,15 +36,16 @@ window.addEventListener("load", () => {
 		} else {
 			estadoSecreto = 0;
 		}
+        console.log(estadoSecreto);
 	});
 
     let input = document.getElementById("titulo");
     input.addEventListener('input',(e)=>{
-        //como puedo comprobar si lo que se ingresa en el input aparece dentro de un string?
         let str = "secreto";
         let palabra = e.target.value;
+        palabra = palabra.trim().toLowerCase();
         console.log(str.includes(palabra));
-        if (str === palabra.toLowerCase()) {
+        if (str === palabra) {
             alert("PALABRA MAGICAAAAA");
         }
 
